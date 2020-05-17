@@ -1,3 +1,13 @@
-This is demo file
-After fork add and commiting test
-I have added some more lines
+For scrolling
+
+  let app = XCUIApplication()
+        let range = XCUIApplication().buttons.matching(identifier: "objc icon").count
+        
+        print("IDENTIFIER IS \(XCUIApplication().buttons["objc icon"].firstMatch.label)")
+        //CGPoint(x: startX, y: startY)
+        let startPosition = CGPoint(x: 200, y: 300)
+        let endPosition = CGPoint(x: 200, y: 0)
+        let elementToSwipeOn = XCUIApplication().buttons["objc icon"].firstMatch
+        let start = elementToSwipeOn.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0)).withOffset(CGVector(dx: startPosition.x, dy: startPosition.y))
+        let finish = elementToSwipeOn.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0)).withOffset(CGVector(dx: endPosition.x, dy: endPosition.y))
+            start.press(forDuration: 0, thenDragTo: finish)
