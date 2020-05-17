@@ -11,3 +11,7 @@ For scrolling
         let start = elementToSwipeOn.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0)).withOffset(CGVector(dx: startPosition.x, dy: startPosition.y))
         let finish = elementToSwipeOn.coordinate(withNormalizedOffset: CGVector(dx: 0, dy: 0)).withOffset(CGVector(dx: endPosition.x, dy: endPosition.y))
             start.press(forDuration: 0, thenDragTo: finish)
+
+
+To Lock Screen
+ XCUIDevice.shared.perform(NSSelectorFromString("pressLockButton"))
